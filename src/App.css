@@ -1,0 +1,54 @@
+.no_scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Testimonails CSS */
+.slide {
+  z-index: 0;
+  animation: goaway 1s ease-in-out forwards;
+}
+
+.slide.current {
+  z-index: 10;
+  animation: comein 0.5s ease-in-out forwards;
+}
+
+.testimonial_desc {
+  animation: comedown 0.5s ease-in-out forwards;
+}
+
+@keyframes goaway {
+  0% {
+    transform: translate(0);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes comein {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes comedown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
